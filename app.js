@@ -12,7 +12,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use('/', require('./routes/users.routes'));
 app.use('/posts', require('./routes/posts.routes'));
-app.use('/comments', require('./routes/comments.routes'));
+// app.use('/comments', require('./routes/comments.routes'));
 
 http.listen(port, () => {
     console.log(`Start listen Server: ${port}`);
