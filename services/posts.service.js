@@ -51,7 +51,6 @@ class PostService {
       content
     );
 
-    console.log(createPostData);
     return {
       postId: createPostData.postId,
       userId: createPostData.userId,
@@ -104,13 +103,11 @@ class PostService {
   //좋아요 게시글 조회
   getPostLike = async (userId ) => {
     const Likes = await this.postRepository.getPostLike({userId});
-    console.log(Likes)
 
     let likeList = [];
     for( const like of Likes ){
       likeList.push({ Post : like.Post })
     }
-    console.log(likeList)
 
     return likeList.sort((a, b) => {
       return b.likes - a.likes;
@@ -136,7 +133,6 @@ class PostService {
     const isLike = await this.postRepository.findPostLike({ userId, postId });
     if (!isLike) {
       const LikeData = await this.postRepository.createPostLike({userId, postId});
-      console.log(LikeData);
       return {
        LikeData
       };
