@@ -3,6 +3,8 @@ const Http = require('http');
 require('dotenv').config();
 
 const cookieParser = require('cookie-parser');
+const { errorLogger, errorHandler } = require('./middlewares/error-handler.middleware');
+
 
 const app = express();
 const http = Http.createServer(app);
