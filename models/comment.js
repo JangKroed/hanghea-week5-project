@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'Posts',
+          model: 'Post',
           key: 'postId',
         },
         onDelete: 'cascade',

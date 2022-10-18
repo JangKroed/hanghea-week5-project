@@ -10,15 +10,15 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.hasMany(models.Post, {
-        as: 'Posts',
+        as: 'Post',
         foreignKey: 'userId',
       });
       this.hasMany(models.Comment, {
-        as: 'Comments',
+        as: 'Comment',
         foreignKey: 'userId',
       });
       this.hasMany(models.Like, {
-        as: 'Likes',
+        as: 'Like',
         foreignKey: 'userId',
       });
     }
