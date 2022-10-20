@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Auth = require('../middlewares/auth-middleware')
+const Auth = require('../middlewares/authmiddlewars')
 
 const CommentsController = require('../controllers/comments.controller');
 const commentsController = new CommentsController();
