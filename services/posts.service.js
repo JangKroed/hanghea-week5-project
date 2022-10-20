@@ -84,7 +84,7 @@ class PostService {
 
   deletePost = async (postId, userId) => {
     const findPost = await this.postRepository.findPostById(postId);
-    if (!findPost) throw new InvalidParamsError('게시글이 존하지 않는데요.');
+    if (!findPost) throw new InvalidParamsError('게시글이 존재하지 않는데요.');
 
     await this.postRepository.deletePost(postId, userId);
 
@@ -128,7 +128,7 @@ class PostService {
 
   updatePostLike = async (userId, postId) => {
     const findPost = await this.postRepository.findPostById(postId);
-    if (!findPost) throw new InvalidParamsError('게시글이 존하지 않는데요.');
+    if (!findPost) throw new InvalidParamsError('게시글이 존재하지 않는데요.');
 
     const isLike = await this.postRepository.findPostLike({ userId, postId });
     if (!isLike) {
