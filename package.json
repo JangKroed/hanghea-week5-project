@@ -4,12 +4,12 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "prettify": "prettier --write src/*.js src/**/*.js src/**/**/*.js test/**/*.js test/**/**/*.js",
+    "start": "nodemon app.js,
     "test": "NODE_ENV=test jest --forceExit",
     "test:silent": "NODE_ENV=test jest --silent --forceExit",
     "test:coverage": "NODE_ENV=test jest --coverage --forceExit",
     "test:unit": "NODE_ENV=test jest test/unit --forceExit",
-    "test:integration": "NODE_ENV=test jest test/integration --forceExit",
-    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,7 @@
     "joi": "^17.6.3",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
+    "node-env": "^0.1.6",
     "prettier": "^2.7.1",
     "sequelize": "^6.25.1",
     "sequelize-cli": "^6.5.1"
